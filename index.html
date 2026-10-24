@@ -1,85 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffdc45">
-  <title>2. Sınıf İngilizce 1. Ünite Listen and Learn Oyunu Oyna | İngilizceciyiz</title>
-  <meta name="description" content="2. Sınıf İngilizce 1. Ünite kelimelerini dinle ve öğren oyunu ile eğlenerek pekiştirin. Ücretsiz interaktif İngilizce kelime oyunları İngilizceciyiz'de.">
-  <link rel="canonical" href="https://www.ingilizceciyiz.com/ingilizce-2-sinif-1-unite-kelimeleri-listen-and-learn-oyunu-oyna">
-  <link rel="stylesheet" href="/games/listen-and-learn/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/games/shared/header.css?v=1792682490">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Sınıf İngilizce Kartopu Oyunu</title>
+    <!-- Tailwind CSS ile modern ve şık görünüm -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="page-shell" id="pageShell">
-  <header class="games-header">
-    <div class="games-header-inner">
-        <div class="games-header-brand">
-            <a href="https://www.ingilizceciyiz.com/" target="_blank" rel="noopener noreferrer" aria-label="İngilizceciyiz ana sayfa">
-                <img class="games-header-logo" src="/games/shared/banner.png" alt="İngilizceciyiz Logo">
-            </a>
-            <a class="games-header-center" href="/games" aria-label="Oyun merkezi" title="Oyun merkezi">
-                <img class="games-header-center-image" src="/games/shared/game-center.png" alt="" width="34" height="34">
-                Game<br>Center
-            </a>
-            <a class="games-header-home" href="/games/listen-and-learn" aria-label="Listen and Learn ana ekranı" onclick="return requestListenAndLearnHome()">
-                <span id="gradeBadge" class="games-header-grade">2. Sınıf</span>
-                <span class="games-header-name">Listen and Learn</span>
-            </a>
-        </div>
-        <div class="games-header-controls">
-  <div class="games-header-control-group" id="setupNav">
-    <button type="button" class="games-header-button" id="setupInfoBtn" aria-label="Nasıl oynanır?" title="Nasıl oynanır?"><svg class="games-control-icon" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01" stroke-width="2.8"/></svg></button>
-    <button type="button" class="games-header-button" id="setupFullscreenBtn" aria-label="Tam ekrana geç" title="Tam ekrana geç" aria-pressed="false"><svg class="games-control-icon" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M3 16v3a2 2 0 0 0 2 2h3M21 16v3a2 2 0 0 1-2 2h-3"/></svg></button>
-  </div>
-  <div class="games-header-control-group" id="gameNav" hidden>
-    <button type="button" class="games-header-button" id="backToSetup" aria-label="Ana menüye dön" title="Ana menüye dön"><svg class="games-control-icon" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
-    <button type="button" class="games-header-button" id="pauseGame" aria-label="Oyunu duraklat" title="Oyunu duraklat"><svg class="games-control-icon" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg></button>
-    <button type="button" class="games-header-button" id="restartGame" aria-label="Yeniden başlat" title="Yeniden başlat"><svg class="games-control-icon" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11a9 9 0 1 1 2.65 6.35"/><path d="M3 4v7h7"/></svg></button>
-      <button type="button" class="games-header-button" id="audioToggleBtn" aria-label="Sesi kapat" title="Sesi kapat" aria-pressed="false"><svg class="games-control-icon" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
-    <button type="button" class="games-header-button" id="fullscreenToggleBtn" aria-label="Tam ekrana geç" title="Tam ekrana geç" aria-pressed="false"><svg class="games-control-icon" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M3 16v3a2 2 0 0 0 2 2h3M21 16v3a2 2 0 0 1-2 2h-3"/></svg></button></div>
-  </div>
+<body class="bg-slate-950 text-white min-h-screen flex flex-col items-center justify-center p-4 m-0">
+
+    <!-- ÜST KISIM: OYUN İSMİNİ BURADAN KOLAYCA DEĞİŞTİREBİLİRSİNİZ -->
+    <header class="mb-4 text-center">
+        <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white">
+            2. Sınıf İngilizce 1. Tema School Life Kartopu Oyunu
+        </h1>
+        <p class="text-xs text-slate-400 mt-1">Tam ekran interaktif öğrenci etkinliği</p>
+    </header>
+
+    <!-- OYUN PENCERESİ (İFRAME ALANI) -->
+    <div class="w-full max-w-5xl h-[75vh] min-h-[500px] bg-black rounded-2xl overflow-hidden shadow-2xl border border-slate-800 relative">
+        <iframe src="https://ilkokulingilizce.com/oyunlar/2-sinif-oyunlar/theme-1/2-sinif-1-tema-kartopu/index.html" 
+                title="Oyun Ekranı"
+                class="absolute inset-0 h-full w-full border-0"
+                allow="autoplay; payment; fullscreen; microphone; focus; gamepad"
+                allowfullscreen
+                sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-same-origin"
+                loading="lazy">
+        </iframe>
     </div>
-</header>
-<div class="games-header-spacer" aria-hidden="true"></div>
-<script>(() => {
-  const header = document.querySelector('.games-header');
-  if (!header) return;
-  const updateHeaderHeight = () => {
-    document.documentElement.style.setProperty('--games-header-height', `${header.getBoundingClientRect().height}px`);
-  };
-  updateHeaderHeight();
-  if (typeof ResizeObserver !== 'undefined') {
-    new ResizeObserver(updateHeaderHeight).observe(header);
-  } else {
-    window.addEventListener('resize', updateHeaderHeight, {passive: true});
-  }
-})();</script>
-  <main class="page" id="mainPage">
-    <section class="setup-screen card setup" id="setupScreen">
-      <div class="select-group grade-row"><label for="gradeSelect">Sınıf</label><select class="game-select" id="gradeSelect" aria-label="Sınıf seçin"><option value="2" selected>2. Sınıf</option><option value="3">3. Sınıf</option><option value="4">4. Sınıf</option><option value="5">5. Sınıf</option><option value="6">6. Sınıf</option><option value="7">7. Sınıf</option><option value="8">8. Sınıf</option><option value="9">9. Sınıf</option><option value="10">10. Sınıf</option><option value="11">11. Sınıf</option><option value="12">12. Sınıf</option></select></div>
-            <div class="units" id="unitList"></div>
-      <p class="empty-note" id="unitNotice" hidden></p>
-      <div class="settings-row"><div class="select-group"><label for="playerSelect">Oyuncu sayısı</label><select class="game-select" id="playerSelect"><option value="1">1 oyuncu</option><option value="2" selected>2 oyuncu</option></select></div><div class="select-group"><label for="timerSelect">Soru süresi</label><select class="game-select" id="timerSelect"><option value="20">Kolay — 20 saniye</option><option value="10" selected>Orta — 10 saniye</option><option value="5">Zor — 5 saniye</option></select></div><div class="select-group"><label for="wordCountSelect">Toplam kelime</label><select class="game-select" id="wordCountSelect"><option value="5">5 kelime</option><option value="10" selected>10 kelime</option><option value="20">20 kelime</option><option value="30">30 kelime</option></select></div></div>
-      <div class="setup-actions"><button class="primary" id="startGame">Oyuna Başla</button></div>
-    </section>
-    <section class="play-screen" id="playScreen" aria-label="Oyun">
-      <div class="players" id="players"></div>
-      <div class="timer-box" id="timerBox" hidden><span class="timer-label">Kalan süre</span><div class="timer" id="timer">00:10</div><div class="question-progress"><span>Soru</span><strong id="questionProgress">1/10</strong></div></div>
-    </section>
-  </main>
-  <div class="designer"><a href="https://ozgymusic.com" target="_blank" rel="noopener noreferrer">designed by ozgy</a></div>
-  </div>
-  <div class="game-modal" id="gameModal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="game-modal-card"><h2 id="modalTitle">Nasıl oynanır?</h2><p id="modalMessage">Oyun duraklatıldı. Kuralları inceleyebilirsiniz.</p><ul id="howToPlayInstructions"><li>İngilizce kelimeyi dinleyin.</li><li>Kelimenin doğru Türkçe karşılığını seçin.</li><li>Doğru cevap 10 puan kazandırır. Yanlış cevap 2 puan kaybettirir ve oyuncunun o turdaki hakkı sona erer.</li><li>Seçilen kelime sayısı her setteki soru sayısını belirler. Kelimeler karıştırılır ve yalnızca bir kez kullanılır. Tekrar oynate kalan kelimeler sorulur.</li><li>Her soru için süre sınırı vardır. Süre dolduğunda sonraki soruya geçilir.</li></ul><div class="modal-actions"><button class="primary" id="modalLeave">Oyundan çık</button><button class="secondary" id="modalStay">Oyuna devam et</button></div></div>
-  </div>
-  <div class="game-modal" id="restartModal" hidden role="dialog" aria-modal="true" aria-labelledby="restartTitle">
-    <div class="game-modal-card"><h2 id="restartTitle">Oyun yeniden başlatılsın mı?</h2><p>Oyunu yeniden başlatmak oyuncuların puanlarını sıfırlar ve seçilen ayarlarla yeni bir oyun başlatır.</p><div class="modal-actions"><button type="button" class="secondary" id="restartCancel">İptal</button><button type="button" class="primary" id="restartConfirm">Yeniden başlat</button></div></div>
-  </div>
-  <div class="game-modal" id="progressModal" hidden role="dialog" aria-modal="true" aria-labelledby="progressTitle">
-    <div class="game-modal-card"><h2 id="progressTitle">Sonuçlar</h2><p id="progressMessage"></p><div class="progress-stats" id="progressStats"></div><div class="modal-actions"><button class="secondary" id="progressBack">← Ünitelere dön</button><button class="primary" id="progressAction">Tekrar oyna</button></div></div>
-  </div>
-  <script type="application/json" id="gameConfig">{"vocabularyByGrade":{"2":{"1":[{"word":"big","translation":"büyük"},{"word":"boy","translation":"erkek çocuk"},{"word":"canteen","translation":"kantin"},{"word":"clap","translation":"alkışlamak"},{"word":"classroom","translation":"sınıf"},{"word":"day","translation":"gün"},{"word":"excuse me","translation":"affedersiniz"},{"word":"fine","translation":"iyi"},{"word":"finish","translation":"bitirmek"},{"word":"Friday","translation":"Cuma"},{"word":"friend","translation":"arkadaş"},{"word":"garden","translation":"bahçe"},{"word":"girl","translation":"kız çocuk"},{"word":"headmaster","translation":"erkek okul müdürü"},{"word":"headmistress","translation":"kadın okul müdürü"},{"word":"hello","translation":"merhaba"},{"word":"hi","translation":"selam"},{"word":"how","translation":"nasıl"},{"word":"jump","translation":"zıplamak"},{"word":"kid","translation":"çocuk"},{"word":"library","translation":"kütüphane"},{"word":"lunch hall","translation":"yemekhane"},{"word":"meet","translation":"tanışmak"},{"word":"Monday","translation":"Pazartesi"},{"word":"name","translation":"isim"},{"word":"people","translation":"insanlar"},{"word":"place","translation":"yer"},{"word":"playground","translation":"oyun alanı"},{"word":"pupil","translation":"öğrenci"},{"word":"Saturday","translation":"Cumartesi"},{"word":"school","translation":"okul"},{"word":"sing","translation":"şarkı söylemek"},{"word":"sports hall","translation":"spor salonu"},{"word":"start","translation":"başlamak"},{"word":"Sunday","translation":"Pazar"},{"word":"teacher","translation":"öğretmen"},{"word":"teacher’s room","translation":"öğretmenler odası"},{"word":"thank you","translation":"teşekkür ederim"},{"word":"Thursday","translation":"Perşembe"},{"word":"today","translation":"bugün"},{"word":"together","translation":"birlikte"},{"word":"Tuesday","translation":"Salı"},{"word":"wait","translation":"beklemek"},{"word":"Wednesday","translation":"Çarşamba"},{"word":"week","translation":"hafta"},{"word":"what","translation":"ne"},{"word":"where","translation":"nerede"},{"word":"who","translation":"kim"}]}}}</script>
+
 </body>
 </html>
